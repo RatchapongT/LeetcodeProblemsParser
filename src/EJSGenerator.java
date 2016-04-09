@@ -45,29 +45,7 @@ public class EJSGenerator {
                 if (problemContent == null) {
                     System.out.println(link);
                 }
-                String template =
-                        "<!DOCTYPE html><html lang = \"en\"><% include ../../partials/page/head.ejs %>" +
-                        "<body class = \"fixed-header\">" +
-                        "<% include ../../partials/page/header.ejs %>" +
-
-                        "<% include ../../partials/page/search.ejs %>" +
-                        "<div id = \"wrapper\">" +
-                        "<section class = \"elements\">" +
-                        "<div class = \"container\">" +
-                        "<h3>" + title + "</h3>" +
-                                problemContent.html()+
-                        "</div>" +
-                        "</section>" +
-
-                        "</div>" +
-
-
-                        "<% include ../../partials/page/footer.ejs %>" +
-
-                        "<% include ../../partials/page/script.ejs %>" +
-
-                        "</body>" +
-                        "</html>";
+                String template = problemContent.html();
 
                 file.write(template);
                 file.flush();
