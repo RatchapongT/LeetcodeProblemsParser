@@ -1,0 +1,39 @@
+<!DOCTYPE html><html lang = "en"><% include ../../partials/page/head.ejs %><body class = "fixed-header"><% include ../../partials/page/header.ejs %><% include ../../partials/page/search.ejs %><div id = "wrapper"><section class = "elements"><div class = "container"><h3>Add and Search Word - Data structure design</h3><p></p>
+<p> Design a data structure that supports the following two operations: </p> 
+<pre>
+void addWord(word)
+bool search(word)
+</pre> 
+<p> search(word) can search a literal word or a regular expression string containing only letters <code>a-z</code> or <code>.</code>. A <code>.</code> means it can represent any one letter.</p> 
+<p> For example:</p> 
+<pre>
+addWord("bad")
+addWord("dad")
+addWord("mad")
+search("pad") -&gt; false
+search("bad") -&gt; true
+search(".ad") -&gt; true
+search("b..") -&gt; true
+</pre> 
+<p> <b>Note:</b><br> You may assume that all words are consist of lowercase letters <code>a-z</code>. </p> 
+<p class="showspoilers"><a href="#" onclick="showSpoilers(this); return false;">click to show hint.</a></p> 
+<div class="spoilers">
+ You should be familiar with how a Trie works. If not, please work on this problem: 
+ <a href="https://leetcode.com/problems/implement-trie-prefix-tree/">Implement Trie (Prefix Tree)</a> first. 
+</div>
+<p></p> 
+<div> 
+ <p><a href="/subscribe/">Subscribe</a> to see which companies asked this question</p> 
+</div> 
+<div> 
+ <div id="tags" class="btn btn-xs btn-warning">
+  Show Tags
+ </div> 
+ <span class="hidebutton"> <a class="btn btn-xs btn-primary" href="/tag/backtracking/">Backtracking</a> <a class="btn btn-xs btn-primary" href="/tag/trie/">Trie</a> <a class="btn btn-xs btn-primary" href="/tag/design/">Design</a> </span> 
+</div> 
+<div> 
+ <div id="similar" class="btn btn-xs btn-warning">
+  Show Similar Problems
+ </div> 
+ <span class="hidebutton"> <a class="btn btn-xs btn-primary" href="/problems/implement-trie-prefix-tree/"> (M) Implement Trie (Prefix Tree)</a> </span> 
+</div></div></section></div><% include ../../partials/page/footer.ejs %><% include ../../partials/page/script.ejs %></body></html>

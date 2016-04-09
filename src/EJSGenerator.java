@@ -28,12 +28,48 @@ public class EJSGenerator {
             String link = data.get(2).select("a").first().attr("abs:href");
 
             String problemName = link.substring(30, link.length() - 1);
-
-            System.out.println();
+            String title = data.get(2).text();
             String outputName = "leetcode-problems-list/" + problemName + ".ejs";
 
             try {
                 FileWriter file = new FileWriter(outputName);
+
+
+                Document subDoc = null;
+                try {
+                    subDoc = Jsoup.connect(link).get();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                Elements problemContent = subDoc.select(".question-content");
+                if (problemContent == null) {
+                    System.out.println(link);
+                }
+                String template =
+                        "<!DOCTYPE html><html lang = \"en\"><% include ../../partials/page/head.ejs %>" +
+                        "<body class = \"fixed-header\">" +
+                        "<% include ../../partials/page/header.ejs %>" +
+
+                        "<% include ../../partials/page/search.ejs %>" +
+                        "<div id = \"wrapper\">" +
+                        "<section class = \"elements\">" +
+                        "<div class = \"container\">" +
+                        "<h3>" + title + "</h3>" +
+                                problemContent.html()+
+                        "</div>" +
+                        "</section>" +
+
+                        "</div>" +
+
+
+                        "<% include ../../partials/page/footer.ejs %>" +
+
+                        "<% include ../../partials/page/script.ejs %>" +
+
+                        "</body>" +
+                        "</html>";
+
+                file.write(template);
                 file.flush();
                 file.close();
             } catch (IOException e) {

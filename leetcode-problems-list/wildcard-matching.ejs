@@ -1,0 +1,36 @@
+<!DOCTYPE html><html lang = "en"><% include ../../partials/page/head.ejs %><body class = "fixed-header"><% include ../../partials/page/header.ejs %><% include ../../partials/page/search.ejs %><div id = "wrapper"><section class = "elements"><div class = "container"><h3>Wildcard Matching</h3><p></p>
+<p>Implement wildcard pattern matching with support for <code>'?'</code> and <code>'*'</code>.</p> 
+<pre>
+'?' Matches any single character.
+'*' Matches any sequence of characters (including the empty sequence).
+
+The matching should cover the <b>entire</b> input string (not partial).
+
+The function prototype should be:
+bool isMatch(const char *s, const char *p)
+
+Some examples:
+isMatch("aa","a") → false
+isMatch("aa","aa") → true
+isMatch("aaa","aa") → false
+isMatch("aa", "*") → true
+isMatch("aa", "a*") → true
+isMatch("ab", "?*") → true
+isMatch("aab", "c*a*b") → false
+</pre>
+<p></p> 
+<div> 
+ <p><a href="/subscribe/">Subscribe</a> to see which companies asked this question</p> 
+</div> 
+<div> 
+ <div id="tags" class="btn btn-xs btn-warning">
+  Show Tags
+ </div> 
+ <span class="hidebutton"> <a class="btn btn-xs btn-primary" href="/tag/dynamic-programming/">Dynamic Programming</a> <a class="btn btn-xs btn-primary" href="/tag/backtracking/">Backtracking</a> <a class="btn btn-xs btn-primary" href="/tag/greedy/">Greedy</a> <a class="btn btn-xs btn-primary" href="/tag/string/">String</a> </span> 
+</div> 
+<div> 
+ <div id="similar" class="btn btn-xs btn-warning">
+  Show Similar Problems
+ </div> 
+ <span class="hidebutton"> <a class="btn btn-xs btn-primary" href="/problems/regular-expression-matching/"> (H) Regular Expression Matching</a> </span> 
+</div></div></section></div><% include ../../partials/page/footer.ejs %><% include ../../partials/page/script.ejs %></body></html>

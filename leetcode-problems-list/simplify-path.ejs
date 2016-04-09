@@ -1,0 +1,23 @@
+<!DOCTYPE html><html lang = "en"><% include ../../partials/page/head.ejs %><body class = "fixed-header"><% include ../../partials/page/header.ejs %><% include ../../partials/page/search.ejs %><div id = "wrapper"><section class = "elements"><div class = "container"><h3>Simplify Path</h3><p></p>
+<p>Given an absolute path for a file (Unix-style), simplify it.</p> 
+<p>For example,<br> <b>path</b> = <code>"/home/"</code>, =&gt; <code>"/home"</code><br> <b>path</b> = <code>"/a/./b/../../c/"</code>, =&gt; <code>"/c"</code><br> </p> 
+<p class="showspoilers"><a href="#" onclick="showSpoilers(this); return false;">click to show corner cases.</a></p> 
+<div class="spoilers">
+ <b>Corner Cases:</b> 
+ <p> </p>
+ <ul> 
+  <li>Did you consider the case where <b>path</b> = <code>"/../"</code>?<br> In this case, you should return <code>"/"</code>.</li> 
+  <li>Another corner case is the path might contain multiple slashes <code>'/'</code> together, such as <code>"/home//foo/"</code>.<br> In this case, you should ignore redundant slashes and return <code>"/home/foo"</code>.</li> 
+  <p></p> 
+ </ul>
+</div>
+<p></p> 
+<div> 
+ <p><a href="/subscribe/">Subscribe</a> to see which companies asked this question</p> 
+</div> 
+<div> 
+ <div id="tags" class="btn btn-xs btn-warning">
+  Show Tags
+ </div> 
+ <span class="hidebutton"> <a class="btn btn-xs btn-primary" href="/tag/stack/">Stack</a> <a class="btn btn-xs btn-primary" href="/tag/string/">String</a> </span> 
+</div></div></section></div><% include ../../partials/page/footer.ejs %><% include ../../partials/page/script.ejs %></body></html>
