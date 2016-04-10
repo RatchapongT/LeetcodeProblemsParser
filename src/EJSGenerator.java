@@ -32,10 +32,10 @@ public class EJSGenerator {
             String title = data.get(2).text();
 
             //templatesGenerator(problemName, title);
-            problemsGenerator(problemName, link);
-            explanationsGenerator(problemName);
+            //problemsGenerator(problemName, link);
+            //explanationsGenerator(problemName);
             solutionsGenerator(problemName);
-            javaGenerator(problemName);
+            //javaGenerator(problemName);
         }
 
     }
@@ -189,19 +189,29 @@ public class EJSGenerator {
             }
         }
         String solution = "leetcode-solutions/solution-" + problemName + ".ejs";
-        String template = "<h3><b>Solution</b></h3>\n" +
-                "                    <div class=\"problem-solution\">\n" +
-                "                        <pre class=\"language-java\">\n" +
-                "                            <code class=\"language-java\">\n" +
-                "                                <%= include('../leetcode-java/java-" + problemName + ".java'); %>\n" +
-                "                            </code>\n" +
-                "                        </pre>\n" +
-                "                    </div>\n" +
+        String template = "<div class = \"panel panel-green-sea\">\n" +
+                "    <div class = \"panel-heading\">\n" +
+                "        <h1 style = \"font-size: 20px\" class = \"panel-title\"><b>Solution</b></h1>\n" +
+                "    </div>\n" +
+                "    <div class = \"panel-body\">\n" +
+                "        <div>\n" +
+                "            <h3 class = \"panel-title split-para\">\n" +
+                "                <b>Code</b><span class = \"text-info\">Language: <strong>Java</strong></span>\n" +
+                "            </h3>\n" +
+                "        <pre class = \"line-numbers language-java\">\n" +
+                "        <code class = \"language-java\">\n" +
+                "            <%= include('../leetcode-java/java-" + problemName + ".java'); %>\n" +
+                "        </code>\n" +
+                "        </pre>\n" +
+                "        </div>\n" +
+                "        <div style=\"margin-top: 20px\">\n" +
+                "            <h3 class = \"panel-title split-para\">\n" +
+                "                <b>Explanation</b>\n" +
+                "            </h3><%- include('../leetcode-explanations/explanation-" + problemName + ".ejs'); %>\n" +
                 "\n" +
-                "                    <h3><b>Explanation</b></h3>\n" +
-                "                    <div class=\"problem-explanation\">\n" +
-                "                        <%- include('../leetcode-explanations/explanation-" + problemName + ".ejs'); %>\n" +
-                "                    </div>";
+                "        </div>\n" +
+                "    </div>\n" +
+                "</div>";
         try {
             FileWriter file = new FileWriter(solution);
             file.write(template);
